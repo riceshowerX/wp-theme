@@ -62,27 +62,4 @@
 		</div><!-- .container -->
 	</header><!-- #masthead -->
 
-<!-- Hero Section -->
-<section id="hero" class="hero-section">
-    <div class="hero-bg-pattern"></div>
-    <div class="hero-gradient"></div>
-    <div class="container">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title"><span class="hero-title-animation"><?php echo wp_kses_post( titecho_get_option( 'titecho_hero_title', 'High-Performance AC Motors & Water Pumps' ) ); ?></span></h1>
-                <p class="hero-description"><span class="hero-description-animation"><?php echo wp_kses_post( titecho_get_option( 'titecho_hero_subtitle', 'Leading manufacturer providing reliable, energy-efficient electrical solutions for industrial and commercial applications.' ) ); ?></span></p>
-                <div class="hero-buttons">
-                    <a href="<?php echo esc_url( titecho_get_option( 'titecho_hero_cta_url', '#products' ) ); ?>" class="btn btn-primary scroll-smooth"><?php echo esc_html( titecho_get_option( 'titecho_hero_cta_text', 'Explore Products' ) ); ?></a>
-                    <a href="#contact" class="btn btn-secondary scroll-smooth">Contact Us</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="hero-image-wrapper">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-product.jpg" alt="AC Motor and Water Pump" class="hero-product-image">
-                </div>
-            </div>
-        </div>
-    </div>
-</section><!-- #hero -->
-
 	<div id="content" class="site-content">

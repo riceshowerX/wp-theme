@@ -1,7 +1,7 @@
 // Custom JavaScript for Titecho Theme
 
 jQuery(document).ready(function($) {
-    // Sticky Header
+    // Sticky Header - Single implementation
     $(window).scroll(function() {
         if ($(this).scrollTop() > 50) {
             $('.site-header').addClass('scrolled');
@@ -48,15 +48,7 @@ jQuery(document).ready(function($) {
         }
     });
     
-    // Header scroll effect
-    $(window).on('scroll', function() {
-        const header = $('.header');
-        if ($(window).scrollTop() > 50) {
-            header.addClass('scrolled');
-        } else {
-            header.removeClass('scrolled');
-        }
-    });
+    // Scroll effect is handled by the single implementation above
     
     // Smooth Scrolling for Anchor Links
     $('a[href^="#"]').on('click', function(e) {
@@ -180,23 +172,30 @@ jQuery(document).ready(function($) {
         }
     });
     
-    // Back to Top Button
-    var backToTopButton = $('<button>').addClass('back-to-top').html('<i class="fas fa-arrow-up"></i>');
-    $('body').append(backToTopButton);
+    // Back to Top Button - Using jQuery for consistency
+    var backToTopButton = $('<button>', {
+        class: 'back-to-top',
+        html: '↑',
+        title: 'Back to top'
+    }).appendTo('body');
     
+    // Hide back to top button initially
     backToTopButton.hide();
     
+    // Show/hide back to top button based on scroll position
     $(window).scroll(function() {
         if ($(this).scrollTop() > 300) {
-            backToTopButton.fadeIn();
+            backToTopButton.fadeIn(300);
         } else {
-            backToTopButton.fadeOut();
+            backToTopButton.fadeOut(300);
         }
     });
     
+    // Smooth scroll to top when button is clicked
     backToTopButton.on('click', function() {
-        $('html, body').animate({ scrollTop: 0 }, 800);
-        return false;
+        $('html, body').animate({
+            scrollTop: 0
+        }, 800);
     });
     
     // Product Quick View (if needed)
@@ -227,36 +226,4 @@ jQuery(document).ready(function($) {
 });
 
 // Back to top button styles
-var backToTopStyles = `
-    .back-to-top {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: #0066cc;
-        color: white;
-        border: none;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        font-size: 20px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        z-index: 99;
-        transition: all 0.3s ease;
-    }
-    
-    .back-to-top:hover {
-        background-color: #003366;
-        transform: translateY(-3px);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    }
-`;
-
-// Add back to top button styles
-var styleSheet = document.createElement("style");
-styleSheet.type = "text/css";
-styleSheet.innerText = backToTopStyles;
-document.head.appendChild(styleSheet);
+// Back to top button functionality will use styles from CSS file

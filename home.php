@@ -16,13 +16,15 @@ get_header(); ?>
 
 			<!-- Hero Section -->
 			<section class="hero-section">
+				<div class="hero-bg-pattern"></div>
+				<div class="hero-gradient"></div>
 				<div class="container">
 					<div class="hero-content">
-						<h1 class="hero-title">Advanced AC Motors & Water Pumps</h1>
-						<p class="hero-subtitle">Techo Electrical & Mechanical (Taizhou) Co., Ltd. - Professional manufacturer of high-quality AC motors and water pumps under the brand "titecho"</p>
+						<h1 class="hero-title"><?php echo wp_kses_post( titecho_get_option( 'titecho_hero_title', 'Advanced AC Motors & Water Pumps' ) ); ?></h1>
+						<p class="hero-subtitle"><?php echo wp_kses_post( titecho_get_option( 'titecho_hero_subtitle', 'Techo Electrical & Mechanical (Taizhou) Co., Ltd. - Professional manufacturer of high-quality AC motors and water pumps under the brand "titecho"' ) ); ?></p>
 						<div class="hero-cta">
-							<a href="#products" class="btn">Explore Products</a>
-							<a href="#contact" class="btn" style="margin-left: 15px; background-color: rgba(255, 255, 255, 0.2); border: 1px solid white;">Contact Us</a>
+							<a href="<?php echo esc_url( titecho_get_option( 'titecho_hero_cta_url', '#products' ) ); ?>" class="btn btn-primary scroll-smooth"><?php echo esc_html( titecho_get_option( 'titecho_hero_cta_text', 'Explore Products' ) ); ?></a>
+							<a href="#contact" class="btn btn-secondary scroll-smooth">Contact Us</a>
 						</div>
 					</div>
 				</div>
